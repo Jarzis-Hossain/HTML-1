@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+	</style>
+	<title>Jamal's Portfolio</title>
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		body {
+			background: rgb(252, 252, 252);
+		}
+
+		.navigation {
+			position: sticky;
+			top: 0;
+			height: 80px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 0px 30px;
+			font-family: "Inter", "sans-serif;";
+		}
+
+		.purple-circle {
+			height: 50px;
+			width: 50px;
+			background: rgb(163, 60, 251);
+			border-radius: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 30px;
+			color: white;
+		}
+
+		.Menu {
+			list-style: none;
+			display: flex;
+			font-size: medium;
+		}
+
+		.profile {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.name {
+			font-size: large;
+		}
+
+		.name:hover {
+			text-shadow: 2px 4px #CCC;
+		}
+
+		@media screen and (min-width: 360px) and (max-width: 414px) and (min-height: 640px) and (max-height: 896px) {
+			.navigation {
+				justify-content: space-between;
+				width: 100vw;
+			}
+
+			.name {
+				font-size: medium;
+			}
+
+			.Menu {
+				font-size: small;
+			}
+		}
+
+		.Menu > li{
+			position: relative;
+			width: 122px;
+		}
+
+		.port:hover{
+			color: lightblue;
+		}
+
+		.submenu {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			list-style: none;
+			background: rgb(214, 232, 235, 0.5);
+			width: 100%;
+			transform: scaleY(0);
+			transition: 1s;
+			transform-origin: top;
+		}
+
+		.port:hover .submenu{
+			transform: scaleY(1.0);
+		}
+
+		.submenu > li {
+			padding: 8px 20px;
+			font-size: small;
+			color: #CCC;
+		}
+
+		.folio {
+			height: calc(98vh - 80px);
+			width: 97%;
+			background: rgb(228, 233, 236);
+			margin: auto auto;
+			border-radius: 10px;
+			position: relative;
+		}
+
+		.jamal {
+			position: absolute;
+			top: 70px;
+			left: 900px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="navigation">
+			<div class="profile">
+				<div class="purple-circle">A</div>
+				<div class="name">Ayman Jamal</div>
+			</div>
+			<nav>
+				<ul class="Menu">
+					<li>Home</li>
+					<li>About</li>
+					<li>Services</li>
+					<li>Proccess</li>
+					<li class="port">Portfolio
+						<ul class="submenu">
+							<li><a href="https://github.com/Jarzis-Hossain" target="_main">Jarzis</a></li>
+							<li><a href="https://github.com/farhansafwanshah">Farhan Shah</a></li>
+							<li>Ayman Jamal</li>
+						</ul>
+					</li>
+					<li><button>Contact</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="folio">
+		<header><h1>I'am a </h1></header>
+		<img class="jamal" src="image\jamal.png">
+	</div>
+</body>
+</html>
