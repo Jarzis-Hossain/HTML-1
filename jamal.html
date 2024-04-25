@@ -1,156 +1,168 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-		@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-	</style>
-	<title>Jamal's Portfolio</title>
-	<style>
-		* {
-			padding: 0px;
-			margin: 0px;
-		}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-		body {
-			background: rgb(252, 252, 252);
-		}
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-		.navigation {
-			position: sticky;
-			top: 0;
-			height: 80px;
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			padding: 0px 30px;
-			font-family: "Inter", "sans-serif;";
-		}
+        body {
+            background: rgb(252, 252, 252);
+            font-family: 'Inter', sans-serif;
+        }
 
-		.purple-circle {
-			height: 50px;
-			width: 50px;
-			background: rgb(163, 60, 251);
-			border-radius: 50px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 30px;
-			color: white;
-		}
+        .navigation {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-		.Menu {
-			list-style: none;
-			display: flex;
-			font-size: medium;
-		}
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-		.profile {
-			display: flex;
-			align-items: center;
-			gap: 10px;
-		}
+        .purple-circle {
+            height: 50px;
+            width: 50px;
+            background: rgb(163, 60, 251);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
 
-		.name {
-			font-size: large;
-		}
+        .name {
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-		.name:hover {
-			text-shadow: 2px 4px #CCC;
-		}
+        .Menu {
+            list-style: none;
+            display: flex;
+            font-size: 16px;
+        }
 
-		@media screen and (min-width: 360px) and (max-width: 414px) and (min-height: 640px) and (max-height: 896px) {
-			.navigation {
-				justify-content: space-between;
-				width: 100vw;
-			}
+        .Menu > li {
+            position: relative;
+            margin-right: 20px;
+        }
 
-			.name {
-				font-size: medium;
-			}
+        .port:hover {
+            color: lightblue;
+        }
 
-			.Menu {
-				font-size: small;
-			}
-		}
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            background: rgb(214, 232, 235, 0.5);
+            width: 150px;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            transform-origin: top;
+        }
 
-		.Menu > li{
-			position: relative;
-			width: 122px;
-		}
+        .port:hover .submenu {
+            transform: scaleY(1);
+        }
 
-		.port:hover{
-			color: lightblue;
-		}
+        .submenu > li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #444;
+        }
 
-		.submenu {
-			position: absolute;
-			top: 100%;
-			left: 0;
-			list-style: none;
-			background: rgb(214, 232, 235, 0.5);
-			width: 100%;
-			transform: scaleY(0);
-			transition: 1s;
-			transform-origin: top;
-		}
+        .folio {
+            padding: 20px;
+            background: rgb(228, 233, 236);
+            border-radius: 10px;
+            margin: 20px;
+            text-align: center;
+        }
 
-		.port:hover .submenu{
-			transform: scaleY(1.0);
-		}
+        .folio h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
-		.submenu > li {
-			padding: 8px 20px;
-			font-size: small;
-			color: #CCC;
-		}
+        .jamal {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            margin-top: 20px;
+        }
 
-		.folio {
-			height: calc(98vh - 80px);
-			width: 97%;
-			background: rgb(228, 233, 236);
-			margin: auto auto;
-			border-radius: 10px;
-			position: relative;
-		}
+        @media screen and (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
 
-		.jamal {
-			position: absolute;
-			top: 70px;
-			left: 900px;
-		}
-	</style>
+            .Menu {
+                margin-top: 15px;
+            }
+
+            .Menu > li {
+                margin-right: 0;
+                margin-bottom: 10px;
+                gap: 10px;
+            }
+
+            .folio {
+                margin: 10px;
+            }
+        }
+    </style>
+    <title>Jamal's Portfolio</title>
 </head>
 <body>
-	<header>
-		<div class="navigation">
-			<div class="profile">
-				<div class="purple-circle">A</div>
-				<div class="name">Ayman Jamal</div>
-			</div>
-			<nav>
-				<ul class="Menu">
-					<li>Home</li>
-					<li>About</li>
-					<li>Services</li>
-					<li>Proccess</li>
-					<li class="port">Portfolio
-						<ul class="submenu">
-							<li><a href="https://github.com/Jarzis-Hossain" target="_main">Jarzis</a></li>
-							<li><a href="https://github.com/farhansafwanshah">Farhan Shah</a></li>
-							<li>Ayman Jamal</li>
-						</ul>
-					</li>
-					<li><button>Contact</button></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<div class="folio">
-		<header><h1>I'am a </h1></header>
-		<img class="jamal" src="images\jamal.png">
-	</div>
+<header>
+    <div class="navigation">
+        <div class="profile">
+            <div class="purple-circle">A</div>
+            <div class="name">Ayman Jamal</div>
+        </div>
+        <nav>
+            <ul class="Menu">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Process</li>
+                <li class="port">Portfolio
+                    <ul class="submenu">
+                        <li><a href="https://github.com/Jarzis-Hossain" target="_main">Jarzis</a></li>
+                        <li><a href="https://github.com/farhansafwanshah">Farhan Shah</a></li>
+                        <li>Ayman Jamal</li>
+                    </ul>
+                </li>
+                <li><button>Contact</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="folio">
+    <header><h1>I am a</h1></header>
+    <img class="jamal" src="images/jamal.png" alt="Jamal's Image">
+</div>
 </body>
 </html>
